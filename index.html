@@ -35,32 +35,22 @@
         </div>
         <counter-card title="Days without social media" started="12-04-2025 12:44"></counter-card>
     </nav>
-    <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-    Launch demo modal
-  </button>
-  
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+    <!-- Adding section -->
+    <nav class="card p-2 m-2" id="add-section">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Title</span>
         </div>
-        <div class="modal-body">
-          ...
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
+        <input type="text" class="form-control" placeholder="Title" aria-label="Title" aria-describedby="basic-addon1" id="title">
       </div>
-    </div>
-  </div>
-    <footer class="bg-dark center text-light text-center p-3">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Started</span>
+        </div>
+        <input type="date" class="form-control" placeholder="Started" aria-label="Started" aria-describedby="basic-addon1" id="started">
+      </div>
+    </nav>
+    <footer class="bg-dark center text-light text-center p-3 b-0 w-100 l-0">
         <h6>Made by <a href="https://www.linkedin.com/in/tayeb-abderahim-ismail/" target="_blank" class="text-primary">Abderahim</a> | CopyRight &copy; 2024</h6>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>

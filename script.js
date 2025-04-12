@@ -8,7 +8,7 @@ customElements.define('counter-card', class extends HTMLElement {
                         <h4 class="card-title p-0 m-0">${this.getAttribute("title")}</h4>
                         <small>UpCounter | started : ${this.getAttribute("started")}</small>
                     </section>
-                    <button class="btn p-2 mt-1 mr-1 close bg-light" onclick="remove()">&times;</button>
+                    <button class="btn p-2 mt-1 mr-1 close bg-light" onclick="remove('Do you want to remove this counter?')">&times;</button>
                 </div>
                 <div class="card-body d-inline-block text-muted">
                     <h2 class="card-text d-inline">51 Days , 20 hours</h2> + <small class="font-weight-bold">49:34.98</small>
@@ -17,8 +17,8 @@ customElements.define('counter-card', class extends HTMLElement {
     }
 });
 // remove the counter :
-function remove(){
-    if (confirm("Do you want to remove this counter?")==true) {
-        $(".close").parent().parent().remove()
+function remove(msg){
+    if (confirm(msg)==true) {
+        $(this).parent().parent().remove()
     }
 }

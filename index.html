@@ -12,27 +12,16 @@
 <body>
     <nav class="navbar navbar-light bg-light d-flex justify-content-arroung overflow-hidden">
         <a class="navbar-brand" href="#">
-            <img src="https://cdn-icons-png.flaticon.com/512/0/100.png" width="30" height="30" class="d-inline-block align-top" alt="">
-            WebCounter
+            <img src="https://cdn-icons-png.flaticon.com/512/0/100.png" width="30" height="30" class="d-inline-block align-top" alt="">WebCounter
         </a>
         <div class="d-flex justify-content-center align-items-center align-content-left flex-row flex-gap-2">
             <button class="btn btn-success m-1">New Counter</button>
         </div>
     </nav>
     <nav class="counters-list">
-        <div class="card p-2 m-2">
-            <div class="class-header d-flex justify-content-between align-items-center flex-row">
-                <section class="pl-2 pt-2">
-                    <h4 class="card-title p-0 m-0">Days without Smoking</h4>
-                    <small>UpCounter | started : 12-04-2025 12:44</small>
-                </section>
-                <button class="btn p-2 mt-1 mr-1 close bg-light" onclick="remove()">&times;</button>
-            </div>
-            <div class="card-body d-inline-block text-muted">
-                <h2 class="card-text d-inline" class="duration">51 Days , 20 hours</h2> + <small class="font-weight-bold">49:34.98</small>
-            </div>
-        </div>
-        <counter-card title="Days without social media" started="12-04-2025 12:44"></counter-card>
+        <counter-card title="90 days without drugs" date="12-04-2025 12:44" type="down"></counter-card>
+        <counter-card title="Days without social media" date="12-04-2025 12:44" type="up"></counter-card>
+        <counter-card title="Days without social media" date="12-04-2025 12:44" type="down"></counter-card>
     </nav>
     <!-- Adding section -->
     <nav class="card p-2 m-2" id="add-section">
@@ -44,7 +33,7 @@
       </div>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
-          <span class="input-group-text">Started</span>
+          <span class="input-group-text">Started/Ended</span>
         </div>
         <input type="datetime-local" class="form-control" placeholder="Started" aria-label="Started" aria-describedby="basic-addon1" id="started">
       </div>

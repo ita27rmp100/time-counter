@@ -18,7 +18,7 @@ customElements.define('counter-card', class extends HTMLElement {
 });
 // remove the counter :
 function remove(msg){
-    if (confirm(msg)==true) {
-        $(this).parent().parent().remove()
-    }
+    $(document).on("click", ".close", function(){
+        if (confirm(msg)==true) {$(this).closest(".card").remove()}
+    })
 }

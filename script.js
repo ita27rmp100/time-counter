@@ -31,3 +31,12 @@ function remove(){
         if (confirm('Do you want to remove this counter?')==true) {$(this).closest(".card").remove()}
     })
 }
+// display all counters
+$(document).ready(function(){
+    for(let i = 0; i < localStorage.length; i++) {
+        let task = localStorage.key(i)
+        let taskDetails = JSON.parse(localStorage.getItem(task))
+        $(".counters-list").prepend(`<counter-card title="${task}" date="${taskDetails.date}" type="${taskDetails.type}"></counter-card>`)
+        console.log("added")
+    }
+})

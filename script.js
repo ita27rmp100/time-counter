@@ -25,11 +25,23 @@ customElements.define('counter-card', class extends HTMLElement {
             </div>`
     }
 });
-// remove the counter :
+// remove the counter:
 function remove(){
     $(document).on("click", ".close", function(){
-        if (confirm('Do you want to remove this counter?')==true) {$(this).closest(".card").remove()}
+        if (confirm('Do you want to remove this counter?')==true){
+            $(this).closest(".card").remove()
+            localStorage.removeItem($(this).closest(".card").children().children().children()[0].innerText)
+        }
     })
+}
+// add a new counter:
+function addCounter(type){
+    let taskDetails = {
+        "date": $("#date").val().replace("/", "-"),
+        "type": type
+    }
+    localStorage.setItem($("#title").val(), JSON.stringify(taskDetails))
+    window.location = window.location.href
 }
 // display all counters
 $(document).ready(function(){

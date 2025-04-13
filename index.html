@@ -27,11 +27,11 @@
         <div class="input-group-prepend">
           <span class="input-group-text">The date :</span>
         </div>
-        <input type="datetime-local" class="form-control" placeholder="Started" aria-label="Started" aria-describedby="basic-addon1" id="started">
+        <input type="datetime-local" class="form-control" placeholder="Started" aria-label="Started" aria-describedby="basic-addon1" id="date">
       </div>
       <div>
-        <button class="btn btn-success m-1" id="add-counter">UpCounter</button>
-        <button class="btn btn-outline-danger m-1" id="cancel-add">DownCounter</button>
+        <button class="btn btn-success m-1" id="add-counter" onclick="addCounter('up')">UpCounter</button>
+        <button class="btn btn-outline-danger m-1" id="cancel-add" onclick="addCounter('down')">DownCounter</button>
       </div>
     </nav>
     <nav class="counters-list">

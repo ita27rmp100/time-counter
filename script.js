@@ -43,14 +43,18 @@ function addCounter(type){
     localStorage.setItem($("#title").val(), JSON.stringify(taskDetails))
     window.location = window.location.href
 }
-// display all counters
+// changement on document content
 $(document).ready(function(){
+    // display data from local storage
     for(let i = 0; i < localStorage.length; i++) {
         let task = localStorage.key(i)
         let taskDetails = JSON.parse(localStorage.getItem(task))
         $(".counters-list").prepend(`<counter-card title="${task}" date="${taskDetails.date}" type="${taskDetails.type}"></counter-card>`)
         console.log("added")
     }
+    // footer year
+    $("#currentyear").text(new Date().getFullYear())
+    // counting
     $("counter-card").each(function () {
         const card = $(this);
         const dateAttr = card.attr("date");

@@ -48,9 +48,13 @@ $(document).ready(function(){
     // display data from local storage
     for(let i = 0; i < localStorage.length; i++) {
         let task = localStorage.key(i)
-        let taskDetails = JSON.parse(localStorage.getItem(task))
-        $(".counters-list").prepend(`<counter-card title="${task}" date="${taskDetails.date}" type="${taskDetails.type}"></counter-card>`)
-        console.log("added")
+        if(localStorage.getItem(task) == "ERROR"){
+            continue
+        }
+        else{
+            let taskDetails = JSON.parse(localStorage.getItem(task))
+            $(".counters-list").prepend(`<counter-card title="${task}" date="${taskDetails.date}" type="${taskDetails.type}"></counter-card>`)
+        }
     }
     // footer year
     $("#currentyear").text(new Date().getFullYear())
@@ -59,40 +63,32 @@ $(document).ready(function(){
         const card = $(this);
         const dateAttr = card.attr("date");
         const type = card.attr("type");
-
         if (!dateAttr || !type) return; // skip if data is missing
-
         const targetDate = new Date(dateAttr);
         const h2 = card.find("h2.card-text");
         const small = card.find("small.font-weight-bold");
-
         const interval = setInterval(() => {
             const now = new Date();
             let diffMs = type === "up" ? now - targetDate : targetDate - now;
-
             if (diffMs <= 0 && type === "down") {
                 clearInterval(interval);
                 h2.text("0 Days , 0 hours");
                 small.text("00:00.00");
                 return;
             }
-
             // Calculate Days and Hours
             const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
             const diffHours = Math.floor((diffMs % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-
             // Calculate Minutes, Seconds, and Milliseconds
             const diffMinutes = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
             const diffSeconds = Math.floor((diffMs % (1000 * 60)) / 1000);
             const diffMsOnly = Math.floor((diffMs % 1000) / 10); // two digits for ms
-
             // Format the time (MM:SS.ms)
             const formattedTime = 
                 `${String(diffMinutes).padStart(2, '0')}:${String(diffSeconds).padStart(2, '0')}.${String(diffMsOnly).padStart(2, '0')}`;
-
             // Update the DOM
             h2.text(`${diffDays} Days , ${diffHours} hours`);
             small.text(formattedTime);
-        }, 100); // update every 100ms for smooth countdown
+        }, 100);
     });
 })

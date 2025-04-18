@@ -17,6 +17,6 @@ start index.html
 
 ## 🌐 Useful Links
 
-- 🔗 [Live Demo](https://time-counter-ita.netlify.app/)
+- 🔗 [Live Demo](https://web-counter27.netlify.app/)
 - 📁 [GitHub Repository](https://github.com/ita27rmp100/time-counter)
 - 📁 [Linkedin Post](https://www.linkedin.com/in/tayeb-abderahim-ismail/)
